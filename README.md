@@ -2,7 +2,11 @@
 
 A public lab notebook of small, stealable AI efficiency experiments. Each day ships a prompt or tiny workflow you can copy in minutes, plus a before/after sample so you can verify it works.
 
-Start here: [Day 01 — Messy meeting notes → action table](./day-01/)
+## Days
+
+- [Day 01 — Messy meeting notes → action table](./day-01/)
+- [Day 02 — Shipment slipped → three sendable email tones (formal / warm / firm-but-polite)](./day-02/)
+- [Day 03 — Vague bug report → engineer-ready triage ticket](./day-03/)
 
 ## How to follow along
 
