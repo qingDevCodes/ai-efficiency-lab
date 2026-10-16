@@ -1,0 +1,108 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;background:#1e1e1e;color:#d4d4d4;font-family:Menlo,"DejaVu Sans Mono",Consolas,monospace;font-size:12.5px}
+.title{height:30px;background:#3c3c3c;color:#ccc;font-family:system-ui,"DejaVu Sans",sans-serif;font-size:12px;display:flex;align-items:center;padding:0 12px;gap:8px}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.title .name{flex:1;text-align:center;margin-right:60px}
+.tabs{display:flex;background:#252526;height:30px;border-bottom:1px solid #1a1a1a}
+.tab{padding:7px 14px;color:#969696;font-family:system-ui,"DejaVu Sans",sans-serif;font-size:12px;border-right:1px solid #1a1a1a}
+.tab.on{background:#1e1e1e;color:#fff;border-top:1px solid #0e70c0}
+.code{padding:8px 0 10px}
+.ln{display:flex;line-height:18px}
+.n{width:34px;text-align:right;padding-right:12px;color:#5a5a5a;flex:none;user-select:none}
+.t{white-space:pre-wrap;word-break:break-word;padding-right:12px;flex:1}
+.k{color:#569cd6} .c{color:#6a9955}
+.top{border-bottom:1px solid #333}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr}
+.pane{border-right:1px solid #333} .pane:last-child{border-right:none}
+.term{background:#181818;border-top:1px solid #444}
+.term .tabs{background:#181818;border:none}
+.term .tab{border:none;text-transform:uppercase;font-size:11px;letter-spacing:.04em}
+.term .tab.on{background:#181818;border-top:none;border-bottom:1px solid #e7e7e7}
+.term pre{padding:6px 14px 12px;line-height:17px;color:#cccccc;font-family:inherit;white-space:pre}
+.p{color:#4ec9b0} .ok{color:#73c991} .bad{color:#f14c4c} .b{font-weight:bold}
+.cols{display:grid;grid-template-columns:1fr 1fr;}
+.status{height:22px;background:#007acc;color:#fff;font-family:system-ui,"DejaVu Sans",sans-serif;font-size:11.5px;display:flex;align-items:center;padding:0 10px;gap:18px}
+</style></head><body>
+<div class="title"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="name">day-02 — ai-efficiency-lab</span></div>
+<div class="top">
+  <div class="tabs"><div class="tab on">samples/input.md</div><div class="tab">PROMPT.md</div><div class="tab">check.py</div></div>
+  <div class="code"><div class="ln"><span class="n">1</span><span class="t">from: Lena (account manager)</span></div>
+<div class="ln"><span class="n">2</span><span class="t">to: Harbor Lights Co — purchasing</span></div>
+<div class="ln"><span class="n">3</span><span class="t">re: order A39281</span></div>
+<div class="ln"><span class="n">4</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">5</span><span class="t">need to send them the delay email today. 200 cases LED strips.</span></div>
+<div class="ln"><span class="n">6</span><span class="t">we told them ship Oct 12, it actually shipped Oct 15.</span></div>
+<div class="ln"><span class="n">7</span><span class="t">offering 3% credit on this order.</span></div>
+<div class="ln"><span class="n">8</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">9</span><span class="t"><span class="c">internal: don&#x27;t blame the carrier. don&#x27;t promise anything about future orders.</span></span></div>
+<div class="ln"><span class="n">10</span><span class="t"><span class="c">don&#x27;t give them a delivery ETA we can&#x27;t back up.</span></span></div>
+<div class="ln"><span class="n">11</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">12</span><span class="t">tone?? good account but they&#x27;ve chased us twice already this month.</span></div>
+<div class="ln"><span class="n">13</span><span class="t">not sure if I should sound sorry or just straight.</span></div></div>
+</div>
+<div class="row">
+<div class="pane">
+  <div class="tabs"><div class="tab on">A_formal.eml</div></div>
+  <div class="code"><div class="ln"><span class="n">1</span><span class="t"><span class="k">Subject:</span> Order A39281 — revised ship date and 3% credit</span></div>
+<div class="ln"><span class="n">2</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">3</span><span class="t">Dear Harbor Lights Co team,</span></div>
+<div class="ln"><span class="n">4</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">5</span><span class="t">We are writing regarding order A39281 for 200 cases of LED strips. The order was scheduled to ship on October 12. It shipped on October 15, three days after the committed date.</span></div>
+<div class="ln"><span class="n">6</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">7</span><span class="t">We apologize for the delay. In recognition of it, we are offering a 3% credit on order A39281.</span></div>
+<div class="ln"><span class="n">8</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">9</span><span class="t">Please let us know if you have any questions about this order.</span></div>
+<div class="ln"><span class="n">10</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">11</span><span class="t">Kind regards,</span></div>
+<div class="ln"><span class="n">12</span><span class="t">Lena</span></div>
+<div class="ln"><span class="n">13</span><span class="t">Account Manager</span></div></div>
+</div>
+<div class="pane">
+  <div class="tabs"><div class="tab on">B_warm.eml</div></div>
+  <div class="code"><div class="ln"><span class="n">1</span><span class="t"><span class="k">Subject:</span> Your order A39281 is on its way — sorry it&#x27;s late</span></div>
+<div class="ln"><span class="n">2</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">3</span><span class="t">Hi Harbor Lights team,</span></div>
+<div class="ln"><span class="n">4</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">5</span><span class="t">A quick, honest update on order A39281: your 200 cases of LED strips shipped on October 15, not October 12 as we told you. I know three days matters when you&#x27;re planning around a delivery, and I&#x27;m sorry we put you in that spot.</span></div>
+<div class="ln"><span class="n">6</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">7</span><span class="t">To make up for it, we&#x27;re giving you a 3% credit on this order.</span></div>
+<div class="ln"><span class="n">8</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">9</span><span class="t">If anything&#x27;s unclear, just reply to this email.</span></div>
+<div class="ln"><span class="n">10</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">11</span><span class="t">Thanks for bearing with us,</span></div>
+<div class="ln"><span class="n">12</span><span class="t">Lena</span></div></div>
+</div>
+<div class="pane">
+  <div class="tabs"><div class="tab on">C_firm_polite.eml</div></div>
+  <div class="code"><div class="ln"><span class="n">1</span><span class="t"><span class="k">Subject:</span> Order A39281: shipped Oct 15, 3% credit on this order</span></div>
+<div class="ln"><span class="n">2</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">3</span><span class="t">Hello Harbor Lights Co team,</span></div>
+<div class="ln"><span class="n">4</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">5</span><span class="t">Order A39281 (200 cases of LED strips) shipped on October 15. Our committed ship date was October 12, so the order went out three days late. That is on us, and we apologize.</span></div>
+<div class="ln"><span class="n">6</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">7</span><span class="t">We are offering a 3% credit on order A39281 to cover the delay. The credit applies to this order.</span></div>
+<div class="ln"><span class="n">8</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">9</span><span class="t">If you need anything else related to this order, reply to this email.</span></div>
+<div class="ln"><span class="n">10</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">11</span><span class="t">Best regards,</span></div>
+<div class="ln"><span class="n">12</span><span class="t">Lena</span></div>
+<div class="ln"><span class="n">13</span><span class="t">Account Manager</span></div></div>
+</div></div>
+<div class="term">
+  <div class="tabs"><div class="tab">Problems</div><div class="tab">Output</div><div class="tab on">Terminal</div></div>
+<pre><span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-02</span>$ python3 check.py samples/output.md -q
+<span class="ok">PASS</span>  [A]  72 words | facts 6/6 | new promises/leaks 0 | tone ok
+<span class="ok">PASS</span>  [B]  80 words | facts 6/6 | new promises/leaks 0 | tone ok
+<span class="ok">PASS</span>  [C]  75 words | facts 6/6 | new promises/leaks 0 | tone ok
+<span class="ok b">ALL PASS — 3 emails, same facts, no new promises</span>
+<span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-02</span>$ <span class="c"># sanity: inject "should arrive by Oct 18 ... will not happen again" into C</span>
+<span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-02</span>$ python3 check.py /tmp/bad_C.md -q
+<span class="ok">PASS</span>  [A]  72 words | facts 6/6 | new promises/leaks 0 | tone ok
+<span class="ok">PASS</span>  [B]  80 words | facts 6/6 | new promises/leaks 0 | tone ok
+<span class="bad">FAIL</span>  [C]  87 words | facts 6/6 | new promises/leaks 2 | tone ok
+<span class="bad b">2 FAIL — do not send as-is</span>
+<span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-02</span>$ <span style="background:#ccc">&nbsp;</span></pre>
+</div>
+<div class="status"><span>⎇ main</span><span>0 ⚠ 0 ✕</span><span style="flex:1"></span><span>Ln 14, Col 1</span><span>UTF-8</span><span>Markdown</span></div>
+</body></html>
