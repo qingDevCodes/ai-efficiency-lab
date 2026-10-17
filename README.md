@@ -7,6 +7,7 @@ A public lab notebook of small, stealable AI efficiency experiments. Each day sh
 - [Day 01 — Messy meeting notes → action table](./day-01/)
 - [Day 02 — Shipment slipped → three sendable email tones (formal / warm / firm-but-polite)](./day-02/)
 - [Day 03 — Vague bug report → engineer-ready triage ticket](./day-03/)
+- [Day 04 — Raw git log → release notes a customer can read](./day-04/)
 
 ## How to follow along
 
