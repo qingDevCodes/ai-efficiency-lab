@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;background:#1e1e1e;color:#d4d4d4;font-family:Menlo,"DejaVu Sans Mono",Consolas,monospace;font-size:12.5px}
+.title{height:30px;background:#3c3c3c;color:#ccc;font-family:system-ui,"DejaVu Sans",sans-serif;font-size:12px;display:flex;align-items:center;padding:0 12px;gap:8px}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.title .name{flex:1;text-align:center;margin-right:60px}
+.tabs{display:flex;background:#252526;height:30px;border-bottom:1px solid #1a1a1a}
+.tab{padding:7px 14px;color:#969696;font-family:system-ui,"DejaVu Sans",sans-serif;font-size:12px;border-right:1px solid #1a1a1a}
+.tab.on{background:#1e1e1e;color:#fff;border-top:1px solid #0e70c0}
+.code{padding:8px 0 10px}
+.ln{display:flex;line-height:17.5px}
+.n{width:34px;text-align:right;padding-right:12px;color:#5a5a5a;flex:none;user-select:none}
+.t{white-space:pre-wrap;word-break:break-word;padding-right:12px;flex:1}
+.k{color:#569cd6} .c{color:#6a9955} .s{color:#ce9178} .h{color:#dcdcaa} .p{color:#4ec9b0} .ok{color:#73c991} .bad{color:#f14c4c} .b{font-weight:bold} .u{color:#c586c0}
+.top{border-bottom:1px solid #333}
+.cols{display:grid;grid-template-columns:1fr 1fr}
+.pane{border-right:1px solid #333;min-height:330px} .pane:last-child{border-right:none}
+.term{background:#181818;border-top:1px solid #444}
+.term .tabs{background:#181818;border:none}
+.term .tab{border:none;text-transform:uppercase;font-size:11px;letter-spacing:.04em}
+.term .tab.on{background:#181818;border-top:none;border-bottom:1px solid #e7e7e7}
+.term pre{padding:6px 14px 12px;line-height:17px;color:#cccccc;font-family:inherit;white-space:pre}
+.status{height:22px;background:#007acc;color:#fff;font-family:system-ui,"DejaVu Sans",sans-serif;font-size:11.5px;display:flex;align-items:center;padding:0 10px;gap:18px}
+</style></head><body>
+<div class="title"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="name">day-04 — ai-efficiency-lab</span></div>
+<div class="top">
+  <div class="tabs"><div class="tab on">samples/input.md</div><div class="tab">PROMPT.md</div><div class="tab">check.py</div></div>
+  <div class="code">
+<div class="ln"><span class="n">1</span><span class="t"><span class="c"># git log v2.7.3..v2.8.0 --oneline  (Inkwell invoicing app, fake data)</span></span></div>
+<div class="ln"><span class="n">2</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">3</span><span class="t"><span class="h">a91f2c4</span> <span class="k">feat</span>(invoices)<span class="bad b"></span>: bulk send up to 50 invoices from the list view (#412)</span></div>
+<div class="ln"><span class="n">4</span><span class="t"><span class="h">3c0d7e1</span> <span class="k">fix</span>(pdf)<span class="bad b"></span>: currency symbol rendered as &quot;?&quot; for SEK and NOK (#415)</span></div>
+<div class="ln"><span class="n">5</span><span class="t"><span class="h">77be210</span> <span class="k">chore</span><span class="bad b"></span>: bump eslint to 9.12 (#416)</span></div>
+<div class="ln"><span class="n">6</span><span class="t"><span class="h">e02a9d3</span> <span class="k">feat</span>(api)<span class="bad b">!</span>: rename `client_id` to `customer_id` on /v2/invoices (#418)</span></div>
+<div class="ln"><span class="n">7</span><span class="t"><span class="h">5f61b8a</span> <span class="k">refactor</span>(billing)<span class="bad b"></span>: split TaxCalculator into per-region modules (#419)</span></div>
+<div class="ln"><span class="n">8</span><span class="t"><span class="h">c4410fe</span> <span class="k">fix</span>(invoices)<span class="bad b"></span>: bulk send skipped drafts with no due date (#421)</span></div>
+<div class="ln"><span class="n">9</span><span class="t"><span class="h">9d2e6aa</span> <span class="k">ci</span><span class="bad b"></span>: cache pnpm store between jobs (#422)</span></div>
+<div class="ln"><span class="n">10</span><span class="t"><span class="h">1b7a0c3</span> <span class="k">feat</span>(reminders)<span class="bad b"></span>: pick reminder days per customer instead of per account (#424)</span></div>
+<div class="ln"><span class="n">11</span><span class="t"><span class="h">d88c51e</span> <span class="k">test</span><span class="bad b"></span>: snapshot tests for PDF footer (#425)</span></div>
+<div class="ln"><span class="n">12</span><span class="t"><span class="h">6e9f004</span> <span class="k">fix</span>(auth)<span class="bad b"></span>: password reset link stayed valid after use (#427)</span></div>
+<div class="ln"><span class="n">13</span><span class="t"><span class="h">0aa3b7d</span> <span class="k">perf</span>(list)<span class="bad b"></span>: invoice list loads 200 rows at a time instead of all (#429)</span></div>
+<div class="ln"><span class="n">14</span><span class="t"><span class="h">f3c2e18</span> <span class="k">feat</span>(export)<span class="bad b"></span>: CSV export of paid invoices (#430)</span></div>
+<div class="ln"><span class="n">15</span><span class="t"><span class="h">2b90d6f</span> <span class="u">Revert &quot;feat(export): CSV export of paid invoices (#430)&quot; (#433)</span></span></div>
+<div class="ln"><span class="n">16</span><span class="t"><span class="h">8e15a2c</span> <span class="k">fix</span><span class="bad b"></span>: timezone (#434)</span></div>
+<div class="ln"><span class="n">17</span><span class="t"><span class="h">47cd901</span> <span class="k">deps</span><span class="bad b"></span>: bump stripe-node 14.2 -&gt; 14.9 (#435)</span></div>
+<div class="ln"><span class="n">18</span><span class="t"><span class="h">b6a0e7f</span> <span class="k">docs</span><span class="bad b"></span>: update self-hosting guide (#436)</span></div>
+  </div>
+</div>
+<div class="cols">
+<div class="pane">
+  <div class="tabs"><div class="tab on">samples/output.md</div><div class="tab">EVIDENCE.md</div></div>
+  <div class="code">
+<div class="ln"><span class="n">1</span><span class="t"><span class="h">## Breaking changes</span></span></div>
+<div class="ln"><span class="n">2</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">3</span><span class="t">- The <span class="s">`/v2/invoices`</span> API now uses <span class="s">`customer_id`</span> instead of</span></div>
+<div class="ln"><span class="n">4</span><span class="t">  <span class="s">`client_id`</span>. If you call this endpoint directly, rename the</span></div>
+<div class="ln"><span class="n">5</span><span class="t">  field in your requests and in any code that reads responses.</span></div>
+<div class="ln"><span class="n">6</span><span class="t">  <span class="p">(#418)</span></span></div>
+<div class="ln"><span class="n">7</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">8</span><span class="t"><span class="h">## New</span></span></div>
+<div class="ln"><span class="n">9</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">10</span><span class="t">- Send up to 50 invoices at once from the invoice list, drafts</span></div>
+<div class="ln"><span class="n">11</span><span class="t">  with no due date included. <span class="p">(#412, #421)</span></span></div>
+<div class="ln"><span class="n">12</span><span class="t">- Payment reminders can now be set per customer, so each</span></div>
+<div class="ln"><span class="n">13</span><span class="t">  customer can get reminders on their own days instead of one</span></div>
+<div class="ln"><span class="n">14</span><span class="t">  schedule for the whole account. <span class="p">(#424)</span></span></div>
+<div class="ln"><span class="n">15</span><span class="t">&nbsp;</span></div>
+  </div>
+</div>
+<div class="pane">
+  <div class="tabs"><div class="tab on">output.md (cont.)</div></div>
+  <div class="code">
+<div class="ln"><span class="n">16</span><span class="t"><span class="h">## Improved</span></span></div>
+<div class="ln"><span class="n">17</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">18</span><span class="t">- The invoice list loads 200 rows at a time instead of</span></div>
+<div class="ln"><span class="n">19</span><span class="t">  everything at once. <span class="p">(#429)</span></span></div>
+<div class="ln"><span class="n">20</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">21</span><span class="t"><span class="h">## Fixed</span></span></div>
+<div class="ln"><span class="n">22</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">23</span><span class="t">- Invoice PDFs now show the correct currency symbol for SEK and</span></div>
+<div class="ln"><span class="n">24</span><span class="t">  NOK instead of &quot;?&quot;. <span class="p">(#415)</span></span></div>
+<div class="ln"><span class="n">25</span><span class="t">- Password reset links now stop working once they&#x27;ve been used.</span></div>
+<div class="ln"><span class="n">26</span><span class="t">  <span class="p">(#427)</span></span></div>
+<div class="ln"><span class="n">27</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">28</span><span class="t"><span class="h">## NEEDS A HUMAN</span></span></div>
+<div class="ln"><span class="n">29</span><span class="t">&nbsp;</span></div>
+<div class="ln"><span class="n">30</span><span class="t">- #434 <span class="s">`fix: timezone`</span>: which screen or feature was affected,</span></div>
+<div class="ln"><span class="n">31</span><span class="t">  and what did users see before the fix?</span></div>
+  </div>
+</div>
+</div>
+<div class="term">
+  <div class="tabs"><div class="tab">Problems</div><div class="tab">Output</div><div class="tab on">Terminal</div></div>
+<pre><span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-04</span>$ python3 check.py samples/input.md samples/output.md -q
+<span class="ok b">20/20 checks passed  ALL PASS</span>
+<span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-04</span>$ <span class="c"># sanity: add the reverted CSV export back + &quot;about 40% faster&quot;</span>
+<span class="p">qing@box</span>:<span class="k">~/ai-efficiency-lab/day-04</span>$ python3 check.py samples/input.md /tmp/bad_day04.md -q
+  <span class="bad">FAIL</span>  reverted #430 left out
+  <span class="bad">FAIL</span>  no numbers that aren&#x27;t in the log (found: 40%)
+<span class="bad b">18/20 checks passed  2 FAIL</span>
+</pre>
+</div>
+<div class="status"><span>⎇ main*</span><span>Python</span><span>Ln 31, Col 1</span><span style="margin-left:auto">UTF-8</span></div>
+</body></html>
